@@ -1,0 +1,10 @@
+Here is the project information and steps how to make it workable and test:
+
+1. download the project source code from the link https://github.com/shariffloralimited/SCB_UserProfileApi/archive/refs/heads/main.zip
+2. then find the required documents and SQL files in 'Docs' folder to the path '\SCB_UserProfileApi\Docs',
+3. run the SQL script of the file 'User Secret Table and SP.sql' in the ‘SCBEFT’ database,
+4. build the project opening the file 'UserProfileApi.sln' in the path '\SCB_UserProfileApi\UserProfileApi',
+5. run the project, then url 'http://localhost:32825/' will be opened in browser with response like 'HTTP Error 403.14 - Forbidden' as there is no default document to view,
+6. let's test all demo APIs browsing the link http://localhost:32825/swagger/ui/index. All APIs screenshot of request/response also prepared in the document '\SCB_UserProfileApi\Docs\API request & response details.pdf'
+
+Please be informed that, to get success 200 response from the APIs, a token should be passed calling another API. The details of the token API is ready here '\SCB_UserProfileApi\Docs\token test using postman.json' to run on postman. Token expiration time is configurable in Web.config file with the key name ‘TokenExpiryInSeconds’. Client ID and secrets are in database what already clarified in step#3. Now you just need to add some validations and logics to insert/select data in/from db to make the API functional as their requirement. Please let know if you fetch any problem while build/run/testing the project.
