@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Web;
 using System.Web.Http;
 
 namespace UserProfileApi.Controllers
@@ -12,7 +13,7 @@ namespace UserProfileApi.Controllers
         [HttpPost]
         public HttpResponseMessage GetToken(string clientId, string clientSecret)
         {
-            string baseAddress = "http://localhost:32825";
+            string baseAddress = HttpContext.Current.Request.Url.ToString().Split(new[] { "getToken" }, System.StringSplitOptions.RemoveEmptyEntries)[0];
             var client = new HttpClient();
             var form = new Dictionary<string, string>
             {

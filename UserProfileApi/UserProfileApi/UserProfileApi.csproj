@@ -286,6 +286,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\GlobalExceptionHandler.cs" />
     <Compile Include="Controllers\OAuth2Controller.cs" />
     <Compile Include="Controllers\UlaController.cs" />
     <Compile Include="Controllers\UraController.cs" />

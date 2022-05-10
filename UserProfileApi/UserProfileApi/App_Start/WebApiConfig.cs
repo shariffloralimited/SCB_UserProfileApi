@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using UserProfileApi.Classes;
 
 namespace UserProfileApi
 {
@@ -6,6 +8,7 @@ namespace UserProfileApi
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
